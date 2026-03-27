@@ -72,6 +72,7 @@ Afin de réaliser notre dispositif électronique, nous avons eu besoin de :
 ## Conditionnement analogique 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le capteur en graphite présente une résistance extrêmement élevée (de l'ordre du GΩ), ce qui génère des courants infimes (pico- à nanoampères) sous une tension de 5 V. Pour transformer ce signal en une tension exploitable par l’ADC d'une Arduino UNO (0−5V), nous avons conçu un amplificateur transimpédance.
+PHOTO
 Nous avons utilisé l’AOP LTC1050, choisi pour sa très faible dérive et son excellent contrôle de l’offset. Ce montage permet de convertir le courant de sortie du capteur en tension selon la relation :
 
 ## Modélisation et simulation 
@@ -82,14 +83,14 @@ Nous avons également intégré trois étages de filtrage pour garantir un signa
 - Filtre passe-bas (16 Hz) : élimination des hautes fréquences parasites.
 - Filtre passe-bas (1,6 Hz) : atténuation drastique du bruit secteur (50 Hz)
 - Filtre passe-bas (1,6 kHz) : supression des interférences liées à la communication de l'ADC.
-
+PHOTO
 ## Conception 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La phase de conception a été réalisée sur Kicad. L'ojectif était de créer un Shield compatible avec le format de l'Arduino UNO. 
 Cela nous demandé trois étapes : 
 - Saisie des empreintes et des shématics associés pour nos différents composants : AOP, potentiomètre digital, écran OLED, encodeur rotatoire et module bluetooth. 
 - Le routage du PCB : optimisation du placement des composants pour réduire les longueurs de pistes et visualisation 3D des composants.
 - Ajout d'un plan de masse pour minimiser le bruit électromagnétique et stabiliser les mesures de hautes impédances.
-
+PHOTO
 ## Fabrication 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La réalisation du prototype a été faite par ce processus de fabrication : 
 - Insolation & gravure (réalisé par Catherine Crouzet) : transfert du masque de gravure sur une plauqe époxy et passage au perchlorure de fer.
@@ -101,7 +102,7 @@ Cela nous demandé trois étapes :
 Le système est piloté par deux pôles : 
 - Firmware (Arduino) : utilisation des bibliothèques *Adafruit_SSD1306* (OLED), *SPI* (potentiomètre) et *SoftwareSerial* (Bluetooth). Le code génère un menu intéractif via l'encodeur rotatoire pour calibrer le capteur et lancer les mesures.
 - Interface mobile : développement d'une application Android sur MIT App Inventor qui communique en Bluetooth pour afficher la résistance en temps réel et tracer la courbe de déformation directement sur le smartphone.
-
+PHOTO
 ## Analyse et caractérisation
 
 ## Datasheet
