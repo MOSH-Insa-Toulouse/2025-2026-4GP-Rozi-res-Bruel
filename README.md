@@ -72,7 +72,8 @@ Afin de réaliser notre dispositif électronique, nous avons eu besoin de :
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le capteur en graphite présente une résistance extrêmement élevée (de l'ordre du GΩ), ce qui génère des courants infimes (pico- à nanoampères) sous une tension de 5 V. Pour transformer ce signal en une tension exploitable par l’ADC d'une Arduino UNO (0−5V), nous avons conçu un amplificateur transimpédance, réalisé comme suit : 
 
-<img width="694" height="397" alt="Capture d’écran 2026-03-27 à 16 34 57" src="https://github.com/user-attachments/assets/2215d7ec-27bc-4cae-8668-4fbb6f39b358" />
+<img width="694" height="397" alt="Capture d’écran 2026-03-27 à 16 34 57" src="https://github.com/user-attachments/assets/8cea60ea-ad1a-4f46-b7bb-b49aaf62c9ab" />
+
 
 Nous avons utilisé l’AOP LTC1050 car il possède un courant de biais d'entrée extrêmement faible et un offset quasi nul, évitant ainsi de fausser les mesures de courants très faibles. 
 Nous avons placé une résistance de protection (R5) en entrée pour protéger l'AOP contre les décharges électrostatiques, ainsi qu'une résistance du shunt (R1) qui assure la référence à la masse. La résistance de rétroaction (R2) a été subsitué par un potentiomètre digital MCP41050 pour ajuster dynamiquement le gain du montage via le code Arduino. 
