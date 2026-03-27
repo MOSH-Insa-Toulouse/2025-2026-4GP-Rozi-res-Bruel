@@ -73,13 +73,12 @@ Afin de réaliser notre dispositif électronique, nous avons eu besoin de :
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le capteur en graphite présente une résistance extrêmement élevée (de l'ordre du GΩ), ce qui génère des courants infimes (pico- à nanoampères) sous une tension de 5 V. Pour transformer ce signal en une tension exploitable par l’ADC d'une Arduino UNO (0−5V), nous avons conçu un amplificateur transimpédance.
 PHOTO
-Nous avons utilisé l’AOP LTC1050, choisi pour sa très faible dérive et son excellent contrôle de l’offset. Ce montage permet de convertir le courant de sortie du capteur en tension selon la relation :
+Nous avons utilisé l’AOP LTC1050 car il possède un courant de biais d'entrée extrêmement faible et un offset quasi nul, évitant ainsi de fausser les mesures de courants très faibles. 
+Nous avons également placé une résistance de protection (R5) en entrée pour protéger l'AOP contre les décharges électrostatiques, une résistance du shunt (R1) assure la référence à la masse. La résistance de rétroaction (R2) a été subsitué par un potentiomètre digital MCP41050 pour ajuster dynamiquement le gain du montage via le code Arduino. 
 
 ## Modélisation et simulation 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avant la fabrication, l'ensemble du circuit a été modélisé sous LTSpice pour valider le comportement dynamique et fréquentiel.
-Cela nous a permis de réaliser la détermination de la valeur optimale de la résistance de rétroaction pour maximiser la sensibilité sans saturer l'amplificateur.
-Nous avons également intégré trois étages de filtrage pour garantir un signal propre : 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avant la fabrication, l'ensemble du circuit a été modélisé sous LTSpice pour vérifier que l'amplification convertit bien les nanoampères en une tension comprise entre 0 et 5V. Cette modélisation a également permis de valider l'efficacité de nos trois étage de filtrage :  
 - Filtre passe-bas (16 Hz) : élimination des hautes fréquences parasites.
 - Filtre passe-bas (1,6 Hz) : atténuation drastique du bruit secteur (50 Hz)
 - Filtre passe-bas (1,6 kHz) : supression des interférences liées à la communication de l'ADC.
@@ -88,7 +87,7 @@ PHOTO
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La phase de conception a été réalisée sur Kicad. L'ojectif était de créer un Shield compatible avec le format de l'Arduino UNO. 
 Cela nous demandé trois étapes : 
 - Saisie des empreintes et des shématics associés pour nos différents composants : AOP, potentiomètre digital, écran OLED, encodeur rotatoire et module bluetooth. 
-- Le routage du PCB : optimisation du placement des composants pour réduire les longueurs de pistes et visualisation 3D des composants.
+- Le routage du PCB : optimisation du placement des composants pour réduire les longueurs de pistes et visualisation 3D des composants pour vérifier l'abscence de conflits mécaniques entre tous les composants.
 - Ajout d'un plan de masse pour minimiser le bruit électromagnétique et stabiliser les mesures de hautes impédances.
 PHOTO
 ## Fabrication 
@@ -96,6 +95,7 @@ PHOTO
 - Insolation & gravure (réalisé par Catherine Crouzet) : transfert du masque de gravure sur une plauqe époxy et passage au perchlorure de fer.
 - Nettoyage (réalisé par Catherine Crouzet) : Retrait de la résine photosensible à l'acétone pour révéler les pistes de cuivre.
 - Percage & soudure : montage manuel des composants sur le PCB final.
+- Assemblage : soudure des composants. 
 
 ## Développemebt Firmaware et Software 
 
