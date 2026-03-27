@@ -9,8 +9,8 @@
   - [V. Modélisaiotn et simulation](#modélisaiton-et-simulation)
   - [VI. Conception](#conception)
   - [VII. Fabrication](#fabrication)
-  - [VIII. Développement firmware et software](#application-android)
-  - [IX. Analyse](#banc-de-test)
+  - [VIII. Développement firmware et software](#développement-firmware-et-software)
+  - [IX. Analyse et caractérisation](#analyse-et-caractérisation)
   - [X. Datasheet](#datasheet)
   - [XI. Conclusion](#conclusion)
 
@@ -29,12 +29,12 @@ Tandis qu'en compression, la distance d diminue, les particules se rapprochent, 
 La dépendance exponentielle de la résistance à la distance d explique pourquoi une très faible variation du capteur va nous permettre de lire des varirations de signal (de résistance) importantes. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pour passer d'un simple trait de crayon à un instrument de mesure fiable, le projet a été découpé en plusieurs phases d'ingénierie :
-- Conditionnement analogique : Conception d'un amplificateur transimpédance (conversion courant-tension) pour transformer les variations de courant (de l'ordre du nA) en un signal de tension exploitable (0−5V).
-- Modélisation et Simulation : Utilisation de LTSpice pour dimensionner les filtres actifs et passifs afin d'éliminer le bruit parasite (notamment le 50 Hz du secteur).
-- Conception : Routage d'un circuit imprimé (Shield PCB) sous KiCad pour intégrer l'électronique, l'écran OLED et le module Bluetooth.
-- Fabrication : Réalisation physique du PCB par insolation, gravure chimique (perchlorure de fer), perçage et soudure des composants.
-- Développement Firmware & Software : Programmation de la carte Arduino (gestion de l'I2C, SPI et UART) et création d'une interface mobile sous MIT App Inventor.
-- Analyse : Caractérisation du capteur sur un banc de test dédié, comparaison avec un capteur commercial (Flex Sensor) et rédaction d'une datasheet technique.
+- **Conditionnement analogique** : Conception d'un amplificateur transimpédance (conversion courant-tension) pour transformer les variations de courant (de l'ordre du nA) en un signal de tension exploitable (0−5V).
+- **Modélisation et Simulation** : Utilisation de LTSpice pour dimensionner les filtres actifs et passifs afin d'éliminer le bruit parasite (notamment le 50 Hz du secteur).
+- **Conception** : Routage d'un circuit imprimé (Shield PCB) sous KiCad pour intégrer l'électronique, l'écran OLED et le module Bluetooth.
+- **Fabrication** : Réalisation physique du PCB par insolation, gravure chimique (perchlorure de fer), perçage et soudure des composants.
+- **Développement Firmware & Software** : Programmation de la carte Arduino (gestion de l'I2C, SPI et UART) et création d'une interface mobile sous MIT App Inventor.
+- **Analyse** : Caractérisation du capteur sur un banc de test dédié, comparaison avec un capteur commercial (Flex Sensor) et rédaction d'une datasheet technique.
 
 Ce document a pour objectif d'expliciter ces différentes étapes.  
 
@@ -49,14 +49,14 @@ Les livrables attendus sont les suivants :
 
 Afin de réaliser notre dispositif électronique, nous avons eu besoin de :
 
-*Pour le montage amplificateur transimpédance :*
+**Pour le montage amplificateur transimpédance :**
 
 - Résistances : une de 1 kΩ, une de 10 kΩ et deux de 100 kΩ - une troisième de 100 kΩ peut être prévue, mais peut aussi être substituée par une résistance variable (le potentiomètre digital), choix que l'on a fait ;
 - Potentiomètre digital MCP41050 et son support ;
 - Amplificateur opérationnel LTC1050 et son support ;
 - Capacités : trois de 100 nF et une de 1 μF.
 
-*Pour le reste du dispositif :*
+**Pour le reste du dispositif :**
 
 - Arduino Uno et son câble d’alimentation ;
 - Résistance : une de 47kΩ pour le flex sensor ;
@@ -92,5 +92,18 @@ Cela nous demandé trois étapes :
 
 ## Fabrication 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La réalisation du prototype a été faite par ce processus de fabrication : 
-- Insolation & Gravure (avec l'aide Catherine Crouzet) : transfert du masque de gravure sur une plauqe époxy et passage au perchlorure de fer.
-- Nettoyage : Retrait de la résine photosensible à l'acétone pour révéler les pistes de cuivre. 
+- Insolation & gravure (réalisé par Catherine Crouzet) : transfert du masque de gravure sur une plauqe époxy et passage au perchlorure de fer.
+- Nettoyage (réalisé par Catherine Crouzet) : Retrait de la résine photosensible à l'acétone pour révéler les pistes de cuivre.
+- Percage & soudure : montage manuel des composants sur le PCB final.
+
+## Développemebt Firmaware et Software 
+
+Le système est piloté par deux pôles : 
+- Firmware (Arduino) : utilisation des bibliothèques *Adafruit_SSD1306* (OLED), *SPI* (potentiomètre) et *SoftwareSerial* (Bluetooth). Le code génère un menu intéractif via l'encodeur rotatoire pour calibrer le capteur et lancer les mesures.
+- Interface mobile : développement d'une application Android sur MIT App Inventor qui communique en Bluetooth pour afficher la résistance en temps réel et tracer la courbe de déformation directement sur le smartphone.
+
+## Analyse et caractérisation
+
+## Datasheet
+
+## Conclusion 
