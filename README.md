@@ -107,7 +107,7 @@ Cela nous demandé trois étapes :
 - Percage & soudure : montage manuel des composants sur le PCB final.
 - Assemblage : soudure des composants. 
 
-## Développemebt Firmaware et Software 
+## Développement Firmaware et Software 
 
 Le système est piloté par deux pôles : 
 - Firmware (Arduino) : utilisation des bibliothèques *Adafruit_SSD1306* (OLED), *SPI* (potentiomètre) et *SoftwareSerial* (Bluetooth). Le code génère un menu intéractif via l'encodeur rotatoire pour calibrer le capteur et lancer les mesures.
