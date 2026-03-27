@@ -22,13 +22,12 @@
 L'objectif de ce projet est de concevoir, modéliser, prototyper, caractériser et analyser un capteur de déformation low-tech.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le principe de foncitonnement du capteur repose sur la piézorésistivité d'un dépôt de graphite (réalisé à l'aide d'un simple crayon de bois) sur un support flexible (une feuille de papier). 
-Microscopiquement, le trait de crayon est un agglomérat de feuillets de graphite, à cette échelle. Dans ce milieu granulaire complexe, la conduction se fait principalement par effet tunnel : les nombreux grains sont séparés par de très fins interstices (le vide ou des fibres de papier).
-La probabilité de passage des électrons d'un grain de graphite à l'autre par franchissement de l'interstice est non nulle si cette barrière est suffisament fine. Cette probabilité dépend exponentiellement de la distance d qui sépare les deux grains.
+Microscopiquement, le trait de crayon est un agglomérat de feuillets de graphite. Dans ce milieu granulaire complexe, la conduction se fait principalement par effet tunnel : les nombreux grains sont séparés par de très fins interstices, la probabilité de passage des électrons d'un grain de graphite à l'autre par franchissement de l'interstice est non nulle si cette barrière est suffisament fine. Cette probabilité dépend exponentiellement de la distance d qui sépare les deux grains.
 Ce paramètre physique est alors à l'origine de la variation de résistance : en tension, l'écart d entre les particules augmente, la probabilité de passage est plus faible, la résistance globale du capteur augmente. 
 Tandis qu'en compression, la distance d diminue, les particules se rapprochent, la probabilité d'échange augmente, la résistance chute. 
-La dépendance exponentielle de la résistance à la distance d explique pourquoi une très faible variation du capteur va nous permettre de lire des varirations de signal (de résistance) importantes. 
+La dépendance exponentielle de la résistance à la distance d explique pourquoi une très faible variation du capteur va nous permettre de lire des varirations de signal (résistance) importantes. 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pour passer d'un simple trait de crayon à un instrument de mesure fiable, le projet a été découpé en plusieurs phases d'ingénierie :
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pour passer d'un trait de crayon à un capteur fonctionnel, le projet s'est déroulé selon ces différentes phases :
 - **Conditionnement analogique** : Conception d'un amplificateur transimpédance (conversion courant-tension) pour transformer les variations de courant (de l'ordre du nA) en un signal de tension exploitable (0−5V).
 - **Modélisation et Simulation** : Utilisation de LTSpice pour dimensionner les filtres actifs et passifs afin d'éliminer le bruit parasite (notamment le 50 Hz du secteur).
 - **Conception** : Routage d'un circuit imprimé (Shield PCB) sous KiCad pour intégrer l'électronique, l'écran OLED et le module Bluetooth.
@@ -71,8 +70,11 @@ Afin de réaliser notre dispositif électronique, nous avons eu besoin de :
 
 ## Conditionnement analogique 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le capteur en graphite présente une résistance extrêmement élevée (de l'ordre du GΩ), ce qui génère des courants infimes (pico- à nanoampères) sous une tension de 5 V. Pour transformer ce signal en une tension exploitable par l’ADC d'une Arduino UNO (0−5V), nous avons conçu un amplificateur transimpédance.
-PHOTO
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le capteur en graphite présente une résistance extrêmement élevée (de l'ordre du GΩ), ce qui génère des courants infimes (pico- à nanoampères) sous une tension de 5 V. Pour transformer ce signal en une tension exploitable par l’ADC d'une Arduino UNO (0−5V), nous avons conçu un amplificateur transimpédance, réalisé comme suit : 
+
+<img width="694" height="397" alt="Capture d’écran 2026-03-27 à 16 34 57" src="https://github.com/user-attachments/assets/2215d7ec-27bc-4cae-8668-4fbb6f39b358" />
+<img width="694" height="397" alt="Capture d’écran 2026-03-27 à 16 34 57" src="https://github.com/user-attachments/assets/2215d7ec-27bc-4cae-8668-4fbb6f39b358" />
+
 Nous avons utilisé l’AOP LTC1050 car il possède un courant de biais d'entrée extrêmement faible et un offset quasi nul, évitant ainsi de fausser les mesures de courants très faibles. 
 Nous avons également placé une résistance de protection (R5) en entrée pour protéger l'AOP contre les décharges électrostatiques, une résistance du shunt (R1) assure la référence à la masse. La résistance de rétroaction (R2) a été subsitué par un potentiomètre digital MCP41050 pour ajuster dynamiquement le gain du montage via le code Arduino. 
 
