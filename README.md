@@ -45,7 +45,7 @@ Les livrables attendus sont les suivants :
 - **Une application Android** (sous MIT App Inventor) interfaçant le PCB et le code Arduino correspondant;
 - **Une datasheet du capteur** reprenant toutes ses caractéristiques ainsi que ses tests.
 
-### Matériel nécessaire
+## Matériel nécessaire
 
 Afin de réaliser notre dispositif électronique, nous avons eu besoin de :
 
