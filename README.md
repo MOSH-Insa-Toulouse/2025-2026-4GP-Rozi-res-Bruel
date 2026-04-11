@@ -136,6 +136,7 @@ Calcul de la variation relative de résistance∶ ∆R/R0 (%)=  (R_mesuré-R0)/R
 
 En tension, nous obtenons alors la variation relative de résistance en fonction de la déformation suivante : 
 <img width="581" height="400" alt="sch" src="https://github.com/user-attachments/assets/29c2d8c4-6d53-4a73-8efd-5be374cdb8ba"/>
+
 En compression, nous obtenons la variation relative de la résistance en fonction de la déformation suivante : 
 
 
