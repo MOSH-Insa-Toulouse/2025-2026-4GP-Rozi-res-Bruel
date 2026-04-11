@@ -72,7 +72,7 @@ Afin de réaliser notre dispositif électronique, nous avons eu besoin de :
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le capteur en graphite présente une résistance extrêmement élevée (de l'ordre du GΩ), ce qui génère des courants infimes (pico- à nanoampères) sous une tension de 5 V. Pour transformer ce signal en une tension exploitable par l’ADC d'une Arduino UNO (0−5V), nous avons conçu un amplificateur transimpédance, réalisé comme suit : 
 
-<img width="694" height="397" alt="Capture d’écran 2026-03-27 à 16 34 57" src="https://github.com/user-attachments/assets/8cea60ea-ad1a-4f46-b7bb-b49aaf62c9ab" />
+<img width="347" height="198" alt="Capture d’écran 2026-03-27 à 16 34 57" src="https://github.com/user-attachments/assets/8cea60ea-ad1a-4f46-b7bb-b49aaf62c9ab" />
 
 
 Nous avons utilisé l’AOP LTC1050 car il possède un courant de biais d'entrée extrêmement faible et un offset quasi nul, évitant ainsi de fausser les mesures de courants très faibles. 
@@ -86,7 +86,7 @@ Les trois étages de filtrages de cet amplificateur permet de minimiser au maxim
 - Filtre passe-bas (1,6 Hz) : atténuation drastique du bruit secteur (50 Hz)
 - Filtre passe-bas (1,6 kHz) : supression des interférences liées à la communication de l'ADC.
 
-<img width="1388" height="462" alt="Schema du montage transimpedance" src="https://github.com/user-attachments/assets/3a0ec1fb-3746-4982-9466-483922bc05db" />
+<img width="694" height="231" alt="Schema du montage transimpedance" src="https://github.com/user-attachments/assets/3a0ec1fb-3746-4982-9466-483922bc05db" />
 
 ## Conception 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La phase de conception a été réalisée sur Kicad. L'ojectif était de créer un Shield compatible avec le format de l'Arduino UNO. 
@@ -94,9 +94,9 @@ Cela nous demandé trois étapes :
 - Saisie des empreintes et des shématics associés pour nos différents composants : AOP, potentiomètre digital, écran OLED, encodeur rotatoire et module bluetooth. 
 - Le routage du PCB : optimisation du placement des composants pour réduire les longueurs de pistes et visualisation 3D des composants pour vérifier l'abscence de conflits mécaniques entre tous les composants.
 - Ajout d'un plan de masse pour minimiser le bruit électromagnétique et stabiliser les mesures de hautes impédances.
-<img width="857" height="658" alt="pcb" src="https://github.com/user-attachments/assets/ee6a4bc2-b292-41ad-94a5-3cf82ca331bd" />
+<img width="428" height="329" alt="pcb" src="https://github.com/user-attachments/assets/ee6a4bc2-b292-41ad-94a5-3cf82ca331bd" />
 
-<img width="1162" height="799" alt="sch" src="https://github.com/user-attachments/assets/58cea0d3-3633-4d91-bc43-700db6f227c7" />
+<img width="581" height="400" alt="sch" src="https://github.com/user-attachments/assets/58cea0d3-3633-4d91-bc43-700db6f227c7" />
 
 
 
@@ -116,7 +116,7 @@ PHOTO
 ## Analyse et caractérisation
 **Dispositif de mesure** 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Afin d’obtenir les caractéristiques spécifiques du capteur, nous avons utilisé un banc de test composé de six cylindres de diamètre différent, permettant d’étudier la résistance de notre capteur en tension et en compression pour six valeurs de contraintes connues.  
-<img width="1162" height="799" alt="sch" src="https://github.com/user-attachments/assets/58cea0d3-3633-4d91-bc43-700db6f227c7" />
+<img width="1162" height="799" alt="sch" src="https://github.com/user-attachments/assets/ebb6174a-f0e7-4301-bc09-99fcc8dfd65a"/>
 
 	Nous avons choisi d’étudier trios types de crayons à papier différent : le B, le 3B et le 6B. Nous avons donc conçu trois capteurs différents, et avons déterminé pour chacun d’entre eux douze valeurs : six en compression et six en tension. Ces mesures nous ont permises d’établir la variation relative de résistance en fonction de la déformation grâce aux formules suivantes : 
 	Calcul de la déformation∶                    ε=  e/D
