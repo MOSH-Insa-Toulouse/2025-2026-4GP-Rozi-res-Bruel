@@ -122,8 +122,14 @@ PHOTO
 <img width="581" height="400" alt="sch" src="https://github.com/user-attachments/assets/ebb6174a-f0e7-4301-bc09-99fcc8dfd65a"/>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous avons choisi d’étudier trios types de crayons à papier différent : le B, le 3B et le 6B. Nous avons donc conçu trois capteurs différents, et avons déterminé pour chacun d’entre eux douze valeurs : six en compression et six en tension. Ces mesures nous ont permises d’établir la variation relative de résistance en fonction de la déformation grâce aux formules suivantes : 
+
+
 Calcul de la déformation ∶ ε=  e/D
+
+
 Avec e l’épaisseur du papier utilisé pour le capteur et D le diamètre du cylindre sur lequel est effectué la mesure. 
+
+
 Calcul de la variation relative de résistance∶ ∆R/R0 (%)=  (R_mesuré-R0)/R0
 
 **Résultats des mesures :**
