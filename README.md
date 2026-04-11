@@ -22,10 +22,10 @@
 L'objectif de ce projet est de concevoir, modéliser, prototyper, caractériser et analyser un capteur de déformation low-tech.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le principe de foncitonnement du capteur repose sur la piézorésistivité d'un dépôt de graphite (réalisé à l'aide d'un simple crayon de bois) sur un support flexible (une feuille de papier). 
-Microscopiquement, le trait de crayon est un agglomérat de feuillets de graphite. Dans ce milieu granulaire complexe, la conduction se fait principalement par effet tunnel : les nombreux grains sont séparés par de très fins interstices, la probabilité de passage des électrons d'un grain de graphite à l'autre par franchissement de l'interstice est non nulle si cette barrière est suffisament fine. Cette probabilité dépend exponentiellement de la distance d qui sépare les deux grains.
-Ce paramètre physique est alors à l'origine de la variation de résistance : en tension, l'écart d entre les particules augmente, la probabilité de passage est plus faible, la résistance globale du capteur augmente. 
-Tandis qu'en compression, la distance d diminue, les particules se rapprochent, la probabilité d'échange augmente, la résistance chute. 
-La dépendance exponentielle de la résistance à la distance d explique pourquoi une très faible variation du capteur va nous permettre de lire des varirations de signal (résistance) importantes. 
+Microscopiquement, le trait de crayon est un agglomérat de feuillets de graphite. Dans ce milieu granulaire complexe, la conduction se fait principalement par effet tunnel : les nombreux grains sont séparés par de très fins interstices, la probabilité de passage des électrons d'un grain de graphite à l'autre par franchissement de l'interstice est non nulle si cette barrière est suffisament fine. Cette probabilité dépend exponentiellement de la distance *d* qui sépare les deux grains.
+Ce paramètre physique est alors à l'origine de la variation de résistance : en tension, l'écart *d* entre les particules augmente, la probabilité de passage est plus faible, la résistance globale du capteur augmente. 
+Tandis qu'en compression, la distance *d* diminue, les particules se rapprochent, la probabilité d'échange augmente, la résistance chute. 
+La dépendance exponentielle de la résistance à la distance *d* explique pourquoi une très faible variation du capteur va nous permettre de lire des varirations de signal (résistance) importantes. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pour passer d'un trait de crayon à un capteur fonctionnel, le projet s'est déroulé selon ces différentes phases :
 - **Conditionnement analogique** : Conception d'un amplificateur transimpédance (conversion courant-tension) pour transformer les variations de courant (de l'ordre du nA) en un signal de tension exploitable (0−5V).
