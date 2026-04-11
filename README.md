@@ -94,9 +94,9 @@ Cela nous demandé trois étapes :
 - Saisie des empreintes et des shématics associés pour nos différents composants : AOP, potentiomètre digital, écran OLED, encodeur rotatoire et module bluetooth. 
 - Le routage du PCB : optimisation du placement des composants pour réduire les longueurs de pistes et visualisation 3D des composants pour vérifier l'abscence de conflits mécaniques entre tous les composants.
 - Ajout d'un plan de masse pour minimiser le bruit électromagnétique et stabiliser les mesures de hautes impédances.
-<img width="428" height="329" alt="pcb" src="https://github.com/user-attachments/assets/ee6a4bc2-b292-41ad-94a5-3cf82ca331bd" />
+<img width="428" height="329" alt="pcb" src="https://github.com/user-attachments/assets/ee6a4bc2-b292-41ad-94a5-3cf82ca331bd" /> <img width="581" height="400" alt="sch" src="https://github.com/user-attachments/assets/58cea0d3-3633-4d91-bc43-700db6f227c7" />
 
-<img width="581" height="400" alt="sch" src="https://github.com/user-attachments/assets/58cea0d3-3633-4d91-bc43-700db6f227c7" />
+
 
 
 
