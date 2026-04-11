@@ -116,7 +116,7 @@ PHOTO
 
 ## Analyse et caractérisation
 
-**Dispositif de mesure** 
+**Dispositif de mesure :** 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Afin d’obtenir les caractéristiques spécifiques du capteur, nous avons utilisé un banc de test composé de six cylindres de diamètre différent, permettant d’étudier la résistance de notre capteur en tension et en compression pour six valeurs de contraintes connues.  
 <img width="581" height="400" alt="sch" src="https://github.com/user-attachments/assets/ebb6174a-f0e7-4301-bc09-99fcc8dfd65a"/>
@@ -126,7 +126,8 @@ Calcul de la déformation ∶ ε=  e/D
 Avec e l’épaisseur du papier utilisé pour le capteur et D le diamètre du cylindre sur lequel est effectué la mesure. 
 Calcul de la variation relative de résistance∶ ∆R/R0 (%)=  (R_mesuré-R0)/R0
 
-**Résultats des mesures**
+**Résultats des mesures :**
+
 En tension, nous obtenons alors la variation relative de résistance en fonction de la déformation suivante : 
 
 
@@ -149,11 +150,11 @@ En compression, nous obtenons la variation relative de la résistance en fonctio
 
 
 
-Les allures des courbes sont pertinentes : les crayons à papier sont constitués de graphite et d’un liant isolant (argile). Afin de comprendre la différence entre les différents types de crayons (B, 3B, 6B, …) il faut se pencher sur le seuil de percolation de ceux-ci. Le seuil de percolation représente la fraction volumique nécessaire de charge conductrice (ici le graphite) afin que celles-ci forment un réseau continu interconnecté à travers la matrice isolante (l’argile). A partir de ce seuil de matière conductrice, les propriétés macroscopiques du matériau basculent d’un comportement isolant à un comportement conducteur. Un crayon 6B est saturé en graphite et contient très peu d’argile (seuil de percolation largement dépassé), il représente alors un milieu très conducteur. Quand une déformation est appliquée au capteur, des micro fissures sont créées, mais il existe une multitude de chemins secondaires conducteurs, la résistance globale du capteur n’est que très peu impactée. A contrario, le crayon B a une mine dure, il contient une forte proportion d’argile (très proche du seuil de percolation), les grains de graphite sont plus dispersés dans la matrice d’argile isolante, lorsqu’une déformation est appliquée, les rares chemins électriques entre les grains de graphite se brise très facilement, la résistance varie alors fortement. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Les allures des courbes sont pertinentes : les crayons à papier sont constitués de graphite et d’un liant isolant (argile). Afin de comprendre la différence entre les différents types de crayons (B, 3B, 6B, …) il faut se pencher sur le seuil de percolation de ceux-ci. Le seuil de percolation représente la fraction volumique nécessaire de charge conductrice (ici le graphite) afin que celles-ci forment un réseau continu interconnecté à travers la matrice isolante (l’argile). A partir de ce seuil de matière conductrice, les propriétés macroscopiques du matériau basculent d’un comportement isolant à un comportement conducteur. Un crayon 6B est saturé en graphite et contient très peu d’argile (seuil de percolation largement dépassé), il représente alors un milieu très conducteur. Quand une déformation est appliquée au capteur, des micro fissures sont créées, mais il existe une multitude de chemins secondaires conducteurs, la résistance globale du capteur n’est que très peu impactée. A contrario, le crayon B a une mine dure, il contient une forte proportion d’argile (très proche du seuil de percolation), les grains de graphite sont plus dispersés dans la matrice d’argile isolante, lorsqu’une déformation est appliquée, les rares chemins électriques entre les grains de graphite se brise très facilement, la résistance varie alors fortement. 
 
-**Analyse**
+**Analyse :**
 
-La sensibilité (facteur de jauge k) est définie par : k=  (∆R/R0)/ε
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La sensibilité (facteur de jauge k) est définie par : k=  (∆R/R0)/ε
 Le crayon B possède la meilleure sensibilité puisque pour une déformation donnée il génère une plus grande variation de résistance. Diminuer la concentration de charge conductrice (en passant de 6B à B) augmente alors fortement la piézorésistivité du matériau. 
 Pour conclure, pour une application requérant une grande sensibilité un capteur réalisé avec un crayon de type B est le mieux, néanmoins celui-ci aura tendance à « s’user » plus vite puisque que sa composition est au niveau du seuil de percolation. Tandis que pour une application nécessitant moins de précision mais plus de robustesse, un crayon très gras tel que le 6B conviendra mieux, puisque qu’étant très loin du seuil de percolation il peut être déformé plus de fois avant de ne plus avoir chemins conducteurs possible entre les particules.  
 
