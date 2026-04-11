@@ -113,23 +113,21 @@ Le système est piloté par deux pôles :
 - Firmware (Arduino) : utilisation des bibliothèques *Adafruit_SSD1306* (OLED), *SPI* (potentiomètre) et *SoftwareSerial* (Bluetooth). Le code génère un menu intéractif via l'encodeur rotatoire pour calibrer le capteur et lancer les mesures.
 - Interface mobile : développement d'une application Android sur MIT App Inventor qui communique en Bluetooth pour afficher la résistance en temps réel et tracer la courbe de déformation directement sur le smartphone.
 PHOTO
+
 ## Analyse et caractérisation
+
 **Dispositif de mesure** 
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Afin d’obtenir les caractéristiques spécifiques du capteur, nous avons utilisé un banc de test composé de six cylindres de diamètre différent, permettant d’étudier la résistance de notre capteur en tension et en compression pour six valeurs de contraintes connues.  
-<img width="1162" height="799" alt="sch" src="https://github.com/user-attachments/assets/ebb6174a-f0e7-4301-bc09-99fcc8dfd65a"/>
+<img width="581" height="400" alt="sch" src="https://github.com/user-attachments/assets/ebb6174a-f0e7-4301-bc09-99fcc8dfd65a"/>
 
-	Nous avons choisi d’étudier trios types de crayons à papier différent : le B, le 3B et le 6B. Nous avons donc conçu trois capteurs différents, et avons déterminé pour chacun d’entre eux douze valeurs : six en compression et six en tension. Ces mesures nous ont permises d’établir la variation relative de résistance en fonction de la déformation grâce aux formules suivantes : 
-	Calcul de la déformation∶                    ε=  e/D
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous avons choisi d’étudier trios types de crayons à papier différent : le B, le 3B et le 6B. Nous avons donc conçu trois capteurs différents, et avons déterminé pour chacun d’entre eux douze valeurs : six en compression et six en tension. Ces mesures nous ont permises d’établir la variation relative de résistance en fonction de la déformation grâce aux formules suivantes : 
+Calcul de la déformation ∶ ε=  e/D
 Avec e l’épaisseur du papier utilisé pour le capteur et D le diamètre du cylindre sur lequel est effectué la mesure. 
-	Calcul de la variation relative de résistance∶ 
+Calcul de la variation relative de résistance∶ ∆R/R0 (%)=  (R_mesuré-R0)/R0
 
-∆R/R0 (%)=  (R_mesuré-R0)/R0
-II – Résultats des mesures
-	Nous avons organisé nos résultats dans les tableaux suivants : 
-
-
-
-	En tension, nous obtenons alors la variation relative de résistance en fonction de la déformation suivante : 
+**Résultats des mesures**
+En tension, nous obtenons alors la variation relative de résistance en fonction de la déformation suivante : 
 
 
 
@@ -141,7 +139,7 @@ II – Résultats des mesures
 
 
 
-	En compression, nous obtenons la variation relative de la résistance en fonction de la déformation suivante : 
+En compression, nous obtenons la variation relative de la résistance en fonction de la déformation suivante : 
 
 
 
@@ -152,11 +150,12 @@ II – Résultats des mesures
 
 
 Les allures des courbes sont pertinentes : les crayons à papier sont constitués de graphite et d’un liant isolant (argile). Afin de comprendre la différence entre les différents types de crayons (B, 3B, 6B, …) il faut se pencher sur le seuil de percolation de ceux-ci. Le seuil de percolation représente la fraction volumique nécessaire de charge conductrice (ici le graphite) afin que celles-ci forment un réseau continu interconnecté à travers la matrice isolante (l’argile). A partir de ce seuil de matière conductrice, les propriétés macroscopiques du matériau basculent d’un comportement isolant à un comportement conducteur. Un crayon 6B est saturé en graphite et contient très peu d’argile (seuil de percolation largement dépassé), il représente alors un milieu très conducteur. Quand une déformation est appliquée au capteur, des micro fissures sont créées, mais il existe une multitude de chemins secondaires conducteurs, la résistance globale du capteur n’est que très peu impactée. A contrario, le crayon B a une mine dure, il contient une forte proportion d’argile (très proche du seuil de percolation), les grains de graphite sont plus dispersés dans la matrice d’argile isolante, lorsqu’une déformation est appliquée, les rares chemins électriques entre les grains de graphite se brise très facilement, la résistance varie alors fortement. 
-III – Conclusion 
-La sensibilité (facteur de jauge k) est définie par : 
-k=  (∆R/R0)/ε
+
+**Analyse**
+
+La sensibilité (facteur de jauge k) est définie par : k=  (∆R/R0)/ε
 Le crayon B possède la meilleure sensibilité puisque pour une déformation donnée il génère une plus grande variation de résistance. Diminuer la concentration de charge conductrice (en passant de 6B à B) augmente alors fortement la piézorésistivité du matériau. 
-	Pour conclure, pour une application requérant une grande sensibilité un capteur réalisé avec un crayon de type B est le mieux, néanmoins celui-ci aura tendance à « s’user » plus vite puisque que sa composition est au niveau du seuil de percolation. Tandis que pour une application nécessitant moins de précision mais plus de robustesse, un crayon très gras tel que le 6B conviendra mieux, puisque qu’étant très loin du seuil de percolation il peut être déformé plus de fois avant de ne plus avoir chemins conducteurs possible entre les particules.  
+Pour conclure, pour une application requérant une grande sensibilité un capteur réalisé avec un crayon de type B est le mieux, néanmoins celui-ci aura tendance à « s’user » plus vite puisque que sa composition est au niveau du seuil de percolation. Tandis que pour une application nécessitant moins de précision mais plus de robustesse, un crayon très gras tel que le 6B conviendra mieux, puisque qu’étant très loin du seuil de percolation il peut être déformé plus de fois avant de ne plus avoir chemins conducteurs possible entre les particules.  
 
 ## Datasheet
 
