@@ -33,13 +33,13 @@ La dépendance exponentielle de la résistance à la distance *d* explique pourq
 - **Conception** : Routage d'un circuit imprimé (Shield PCB) sous KiCad pour intégrer l'électronique, l'écran OLED et le module Bluetooth.
 - **Fabrication** : Réalisation physique du PCB par insolation, gravure chimique (perchlorure de fer), perçage et soudure des composants.
 - **Développement Firmware & Software** : Programmation de la carte Arduino (gestion de l'I2C, SPI et UART) et création d'une interface mobile sous MIT App Inventor.
-- **Analyse** : Caractérisation du capteur sur un banc de test dédié, comparaison avec un capteur commercial (Flex Sensor) et rédaction d'une datasheet technique.
+- **Analyse** : Caractérisation du capteur sur un banc de test dédié et rédaction d'une datasheet technique.
 
 Ce document a pour objectif d'expliciter ces différentes étapes.  
 
 ## Livrables 
 Les livrables attendus sont les suivants : 
-- **Un shield PCB connecté à une carte arduino UNO** avec différents composants : un capteur graphite, un amplificateur transimpédance, un module bluetooth, un écran OLED, un flex sensor commercial, un potentiomètre digital, un encodeur rotatoire. D'autres composants peuvent être implémentés. Nous avons opté pour l'ajout d'un servo motor ;
+- **Un shield PCB connecté à une carte arduino UNO** avec différents composants : un capteur graphite, un amplificateur transimpédance, un module bluetooth, un écran OLED, un flex sensor commercial, un potentiomètre digital, un encodeur rotatoire. D'autres composants peuvent être implémentés ;
 - **Un code arduino** qui gère les différents composants cités précédemments (mesures de contraintes, échanges bluetooth et OLED, potentiomètre digital et boutons) ;
 - **Une application Android** (sous MIT App Inventor) interfaçant le PCB et le code Arduino correspondant;
 - **Une datasheet du capteur** reprenant toutes ses caractéristiques ainsi que ses tests.
@@ -62,7 +62,6 @@ Afin de réaliser notre dispositif électronique, nous avons eu besoin de :
 - Module Bluetooth HC05 ;
 - Ecran OLED de dimension 128*64 ;
 - Flex sensor ;
-- Servo motor ;
 - Encodeur rotatoire ;
 - Capteur graphite et 2 pinces crocodiles ;
 - 20 sockets ;
@@ -70,7 +69,7 @@ Afin de réaliser notre dispositif électronique, nous avons eu besoin de :
 
 ## Conditionnement analogique 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le capteur en graphite présente une résistance extrêmement élevée (de l'ordre du GΩ), ce qui génère des courants infimes (pico- à nanoampères) sous une tension de 5 V. Pour transformer ce signal en une tension exploitable par l’ADC d'une Arduino UNO (0−5V), nous avons conçu un amplificateur transimpédance, réalisé comme suit : 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le capteur en graphite présente une résistance extrêmement élevée (de l'ordre du MΩ), ce qui génère des courants infimes (pico- à nanoampères) sous une tension de 5 V. Pour transformer ce signal en une tension exploitable par l’ADC d'une Arduino UNO (0−5V), nous avons conçu un amplificateur transimpédance, réalisé comme suit : 
 
 <img width="347" height="198" alt="Capture d’écran 2026-03-27 à 16 34 57" src="https://github.com/user-attachments/assets/8cea60ea-ad1a-4f46-b7bb-b49aaf62c9ab" />
 
@@ -102,7 +101,7 @@ Cela nous demandé trois étapes :
 
 ## Fabrication 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La réalisation du prototype a été faite par ce processus de fabrication : 
-- Insolation & gravure (réalisé par Catherine Crouzet) : transfert du masque de gravure sur une plauqe époxy et passage au perchlorure de fer.
+- Insolation & gravure (réalisé par Catherine Crouzet) : transfert du masque de gravure sur une plaque époxy et passage au perchlorure de fer.
 - Nettoyage (réalisé par Catherine Crouzet) : Retrait de la résine photosensible à l'acétone pour révéler les pistes de cuivre.
 - Percage & soudure : montage manuel des composants sur le PCB final.
 - Assemblage : soudure des composants. 
