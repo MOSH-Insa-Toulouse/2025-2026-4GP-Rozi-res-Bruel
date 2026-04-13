@@ -138,8 +138,7 @@ En tension, nous obtenons alors la variation relative de résistance en fonction
 
 En compression, nous obtenons la variation relative de la résistance en fonction de la déformation suivante : 
 
-
-
+<img width="581" height="400" alt="sch" src="https://github.com/user-attachments/assets/8c3e12c3-9476-43ac-bae0-5e1c7a669327"/>
 
 
 
@@ -155,5 +154,7 @@ Le crayon B possède la meilleure sensibilité puisque pour une déformation don
 Pour conclure, pour une application requérant une grande sensibilité un capteur réalisé avec un crayon de type B est le mieux, néanmoins celui-ci aura tendance à « s’user » plus vite puisque que sa composition est au niveau du seuil de percolation. Tandis que pour une application nécessitant moins de précision mais plus de robustesse, un crayon très gras tel que le 6B conviendra mieux, puisque qu’étant très loin du seuil de percolation il peut être déformé plus de fois avant de ne plus avoir chemins conducteurs possible entre les particules.  
 
 ## Datasheet
+
+La datasheet du capteur est disponible ici.
 
 ## Conclusion 
