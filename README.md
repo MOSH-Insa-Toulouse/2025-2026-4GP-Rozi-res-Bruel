@@ -111,7 +111,9 @@ Cela nous demandé trois étapes :
 Le système est piloté par deux pôles : 
 - Firmware (Arduino) : utilisation des bibliothèques *Adafruit_SSD1306* (OLED), *SPI* (potentiomètre) et *SoftwareSerial* (Bluetooth). Le code génère un menu intéractif via l'encodeur rotatoire pour calibrer le capteur et lancer les mesures.
 - Interface mobile : développement d'une application Android sur MIT App Inventor qui communique en Bluetooth pour afficher la résistance en temps réel et tracer la courbe de déformation directement sur le smartphone.
-
+- 
+<img width="611" height="634" alt="Image" src="https://github.com/user-attachments/assets/0e72c415-9e4c-429f-9555-374a563530b2" />
+<img width="400" height="782" alt="Image" src="https://github.com/user-attachments/assets/5e9fbab8-828c-425f-831b-e412647cb75c" />
 
 ## Analyse et caractérisation
 
