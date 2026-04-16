@@ -120,7 +120,7 @@ PHOTO
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Afin d’obtenir les caractéristiques spécifiques du capteur, nous avons utilisé un banc de test composé de six cylindres de diamètre différent, permettant d’étudier la résistance de notre capteur en tension et en compression pour six valeurs de contraintes connues.  
 <img width="581" height="400" alt="sch" src="https://github.com/user-attachments/assets/ebb6174a-f0e7-4301-bc09-99fcc8dfd65a"/>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous avons choisi d’étudier trios types de crayons à papier différent : le B, le 3B et le 6B. Nous avons donc conçu trois capteurs différents, et avons déterminé pour chacun d’entre eux douze valeurs : six en compression et six en tension. Ces mesures nous ont permises d’établir la variation relative de résistance en fonction de la déformation grâce aux formules suivantes : 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nous avons choisi d’étudier trois types de crayons à papier différent : le B, le 3B et le 6B. Nous avons donc conçu trois capteurs différents, et avons déterminé pour chacun d’entre eux douze valeurs : six en compression et six en tension. Ces mesures nous ont permises d’établir la variation relative de résistance en fonction de la déformation grâce aux formules suivantes : 
 
 
 Calcul de la déformation ∶ ε=  e/D
