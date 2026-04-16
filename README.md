@@ -154,7 +154,6 @@ Le crayon B possède la meilleure sensibilité puisque pour une déformation don
 Pour conclure, pour une application requérant une grande sensibilité un capteur réalisé avec un crayon de type B est le mieux, néanmoins celui-ci aura tendance à « s’user » plus vite puisque que sa composition est au niveau du seuil de percolation. Tandis que pour une application nécessitant moins de précision mais plus de robustesse, un crayon très gras tel que le 6B conviendra mieux, puisque qu’étant très loin du seuil de percolation il peut être déformé plus de fois avant de ne plus avoir chemins conducteurs possible entre les particules.  
 
 ## Datasheet
-
-La datasheet du capteur est disponible ici.
+La datasheet du capteur est disponible [ici](https://github.com/MOSH-Insa-Toulouse/2025-2026-4GP-Rozi-res-Bruel/blob/main/DATASHEET/DATASHEET.pdf)
 
 ## Conclusion 
