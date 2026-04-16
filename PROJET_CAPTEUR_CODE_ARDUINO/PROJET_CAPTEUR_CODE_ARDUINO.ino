@@ -77,7 +77,7 @@ float R2;
 
 Adafruit_SSD1306 ecranOLED (nombreDePixelsEnLargeur, nombreDePixelsEnHauteur, &Wire, brocheResetOLED);
 
-void setup() {
+void setup() { //Configuration et initialisation des différents composants 
 
   Serial.begin(9600);
 
@@ -100,9 +100,7 @@ void setup() {
   pinMode(csPin, OUTPUT);
   digitalWrite(csPin, HIGH);
   SPI.begin();
-
   Calibration(); 
-
   ecranOLED.clearDisplay();
   ecranOLED.setCursor(0,0);
   ecranOLED.println(F("Calibration OK !"));
@@ -112,13 +110,10 @@ void setup() {
   //Encodeur rotatoire:
   pinMode(Encodclkpin, INPUT); 
   digitalWrite(Encodclkpin, HIGH); 
-
   pinMode(Encoddtpin, INPUT); 
   digitalWrite(Encoddtpin, HIGH);
-
   pinMode(Encodswpin, INPUT); 
   digitalWrite(Encodswpin, HIGH);
-
   attachInterrupt(0, doEncoder, RISING); // On met une interruption sur l'encodeur
 
   //Module Bluetooth:
@@ -136,55 +131,46 @@ void setup() {
 
 //LOOP
 
-void loop() {
+void loop() {                               // Boucle en continue 
 
-  Afficher_Menu();
+  Afficher_Menu(); //Appelée toutes les 500ms
 
 }
 
 //FONCTIONS
 
-// Renvoie la valeur de la résisatnce aux bornes du flex sensor
-float flexSensor(){
-  
+float flexSensor(){                       // Renvoie la valeur de la résistance aux bornes du flex sensor
   float ADCflex = analogRead(flexPin);
   Vflexs = ADCflex * VCC / 1024.0;
   Rflexs = Rdiv * (VCC / Vflexs - 1.0);
-  
   return Rflexs;
 }
 
-// Renvoie la valeur de la résisatnce aux bornes du capteur graphite
-float graphiteSensor(){
+float graphiteSensor(){                   // Renvoie la valeur de la résisatnce aux bornes du capteur graphite
   float ADCgraph = analogRead(graphitePin); 
   float VGraph = ADCgraph * VCC / 1024.0;
-  
-  RGraph = Rdiv*(VCC/VGraph-1); 
+  RGraph = Rdiv*(VCC/VGraph-1.0); 
   return RGraph;
 }
 
-// Renvoie la valeur de la tension aux bornes du capteur graphite
-float graphiteSensor_voltage(){
+float graphiteSensor_voltage(){           // Renvoie la valeur de la tension aux bornes du capteur graphite
   float ADCgraph = analogRead(graphitePin); 
   float VGraph = ADCgraph * VCC / 1024.0; 
-
   return VGraph;
 }
 
-// Règle la résistance de sortie du potentiomètre digital
-void setPotWiper(int addr, int pas){
+void setPotWiper(int addr, int pas){     // Règle la résistance de sortie du potentiomètre digital
   pas = constrain(pas, 0, 255);
   digitalWrite(csPin, LOW);
   SPI.transfer(addr);
   SPI.transfer(pas);
   digitalWrite(csPin, HIGH);
-
   R2 = ((rAB * pas) / maxPositions) + rWiper;
 }
 
-// Calibre le potentiomètre digital pour avoir une tensoin de 3V avec une tolérance de 0.15V
-void Calibration(){
-  float target = 3.0, tol = 0.15;
+
+void Calibration(){                     // Calibre le potentiomètre digital pour avoir une tensoin de 3V avec une tolérance de 0.2V
+  float target = 3.0, tol = 0.2;
   int pas = 0;
   char chaine[10];
 
@@ -210,18 +196,18 @@ void Calibration(){
   }
 } 
 
-// Lit la position de l'encodeur, utilisée lors de l'interruption
-void doEncoder(){
+
+void doEncoder(){                          // Lit la position de l'encodeur (lors de l'interruption)
   if ( (digitalRead(Encodclkpin)==HIGH) && (digitalRead(Encoddtpin)==HIGH) ) { 
     Pas_encod++;
   } 
-  else if ( (digitalRead(Encodclkpin)==HIGH) && (digitalRead(Encoddtpin)==LOW) ) {  //
+  else if ( (digitalRead(Encodclkpin)==HIGH) && (digitalRead(Encoddtpin)==LOW) ) {  
     Pas_encod--;
   }   
 }
 
-// Vérifie l'état du bouton de l'endodeur rotatoire
-void appui_bouton(){
+
+void appui_bouton(){                      // Vérifie l'état du bouton de l'endodeur rotatoire (enfoncé ou non)
   etat_bouton = digitalRead(Encodswpin);
   if (etat_bouton == 0) {
     if (Menu == 0) {
@@ -233,13 +219,13 @@ void appui_bouton(){
   }
 }
 
-//Affiche la liste des menu avec la surbrillance sur le bon titre 
-void Afficher_Liste_Menu(int selection){
 
-  ecranOLED.clearDisplay();   // Effaçage de l'intégralité du buffer
-  ecranOLED.setTextSize(2);   // Taille du texte
+void Afficher_Liste_Menu(int selection){   //Affiche la liste des menus avec la surbrillance sur le bon titre, gère l'affichage sur le OLED
+
+  ecranOLED.clearDisplay();   
+  ecranOLED.setTextSize(2);   
   ecranOLED.setCursor(0, 0);
-  ecranOLED.setTextColor (SSD1306_WHITE, SSD1306_BLACK);  // Met le texte en blanc et le fond en noir
+  ecranOLED.setTextColor (SSD1306_WHITE, SSD1306_BLACK);  
   ecranOLED.println (F("-MENU-"));
   ecranOLED.setTextSize(1);
 
@@ -272,13 +258,12 @@ void Afficher_Liste_Menu(int selection){
   ecranOLED.display();
 }
 
-//Affiche le menu du flex sensor 
-void Ecran_Flex(){
+
+void Ecran_Flex(){                              //Affiche le menu du flex sensor 
 
   float val = flexSensor();
   char res[20];
   dtostrf (val, 1, 2, res);
-
   ecranOLED.clearDisplay();
   ecranOLED.setCursor(1, 0);
   ecranOLED.setTextColor (SSD1306_WHITE, SSD1306_BLACK);
@@ -291,12 +276,11 @@ void Ecran_Flex(){
   ecranOLED.display();
 }
 
-//Affiche le menu du graphite sensor et envoie bluetooth
-void Ecran_Graphite(){
+
+void Ecran_Graphite(){                        //Affiche le menu du graphite sensor et envoie bluetooth
   float val = graphiteSensor();
   char res[20];
   dtostrf(val, 1, 2, res);
-
   ecranOLED.clearDisplay();
   ecranOLED.setCursor(1, 0);
   ecranOLED.setTextColor (SSD1306_WHITE, SSD1306_BLACK);
@@ -307,12 +291,11 @@ void Ecran_Graphite(){
   ecranOLED.println(F("Resistance (Ohm):"));
   ecranOLED.println(res);
   ecranOLED.display();
-
   mySerial.println(res);
 }
 
-// Affiche les menus sur l'écran OLED
-void Afficher_Menu (){
+
+void Afficher_Menu (){                       // Affiche les menus sur l'écran OLED
   unsigned long currentMillis = millis ();  // Sauvegarde la valeur du temps écoulé depuis le lancement du programme
 
   if (currentMillis - previousMillis >= 500){
