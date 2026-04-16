@@ -21,7 +21,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ce projet s'inscrit dans le cadre de l'UF "Du capteur au banc de test" de la 4ème année Génie Physique de l'INSA Toulouse. 
 L'objectif de ce projet est de concevoir, modéliser, prototyper, caractériser et analyser un capteur de déformation low-tech.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le principe de foncitonnement du capteur repose sur la piézorésistivité d'un dépôt de graphite (réalisé à l'aide d'un simple crayon de bois) sur un support flexible (une feuille de papier). 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le principe de fonctionnement du capteur repose sur la piézorésistivité d'un dépôt de graphite (réalisé à l'aide d'un simple crayon de bois) sur un support flexible (une feuille de papier). 
 Microscopiquement, le trait de crayon est un agglomérat de feuillets de graphite. Dans ce milieu granulaire complexe, la conduction se fait principalement par effet tunnel : les nombreux grains sont séparés par de très fins interstices, la probabilité de passage des électrons d'un grain de graphite à l'autre par franchissement de l'interstice est non nulle si cette barrière est suffisament fine. Cette probabilité dépend exponentiellement de la distance *d* qui sépare les deux grains.
 Ce paramètre physique est alors à l'origine de la variation de résistance : en tension, l'écart *d* entre les particules augmente, la probabilité de passage est plus faible, la résistance globale du capteur augmente. 
 Tandis qu'en compression, la distance *d* diminue, les particules se rapprochent, la probabilité d'échange augmente, la résistance chute. 
@@ -96,15 +96,14 @@ Cela nous demandé trois étapes :
 <img width="428" height="329" alt="pcb" src="https://github.com/user-attachments/assets/ee6a4bc2-b292-41ad-94a5-3cf82ca331bd" /> <img width="581" height="400" alt="sch" src="https://github.com/user-attachments/assets/58cea0d3-3633-4d91-bc43-700db6f227c7" />
 
 
-
-
-
 ## Fabrication 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La réalisation du prototype a été faite par ce processus de fabrication : 
 - Insolation & gravure (réalisé par Catherine Crouzet) : transfert du masque de gravure sur une plaque époxy et passage au perchlorure de fer.
 - Nettoyage (réalisé par Catherine Crouzet) : Retrait de la résine photosensible à l'acétone pour révéler les pistes de cuivre.
 - Percage & soudure : montage manuel des composants sur le PCB final.
-- Assemblage : soudure des composants. 
+- Assemblage : soudure des composants.
+
+<img width="629" height="492" alt="Image" src="https://github.com/user-attachments/assets/f2ce5f4d-ae5c-4915-a3c5-307b3e774ec4" />
 
 ## Développement Firmaware et Software 
 
@@ -112,8 +111,8 @@ Le système est piloté par deux pôles :
 - Firmware (Arduino) : utilisation des bibliothèques *Adafruit_SSD1306* (OLED), *SPI* (potentiomètre) et *SoftwareSerial* (Bluetooth). Le code génère un menu intéractif via l'encodeur rotatoire pour calibrer le capteur et lancer les mesures.
 - Interface mobile : développement d'une application Android sur MIT App Inventor qui communique en Bluetooth pour afficher la résistance en temps réel et tracer la courbe de déformation directement sur le smartphone.
 
-<img width="306" height="317" alt="Image" src="https://github.com/user-attachments/assets/0e72c415-9e4c-429f-9555-374a563530b2" />
-<img width="200" height="366" alt="Image" src="https://github.com/user-attachments/assets/5e9fbab8-828c-425f-831b-e412647cb75c" />
+<img width="459" height="475" alt="Image" src="https://github.com/user-attachments/assets/0e72c415-9e4c-429f-9555-374a563530b2" />
+<img width="300" height="549" alt="Image" src="https://github.com/user-attachments/assets/5e9fbab8-828c-425f-831b-e412647cb75c" />
 
 ## Analyse et caractérisation
 
