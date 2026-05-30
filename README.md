@@ -158,3 +158,4 @@ Pour conclure, pour une application requérant une grande sensibilité un capteu
 La datasheet du capteur est disponible [ici](https://github.com/MOSH-Insa-Toulouse/2025-2026-4GP-Rozi-res-Bruel/blob/main/DATASHEET/DATASHEET.pdf)
 
 ## Conclusion 
+Pour conclure ce projet, ce capteur low-tech est adapté non pas à la lecture d'une valeur de résistance et donc de déformation mais plutôt à la détection d'un mouvement. Il serait également intéressant dans une application jetable puisqu'au bout de 5-10 utilisations, il n'est plus fonctionnel.
